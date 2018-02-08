@@ -109,7 +109,7 @@ Here's an example:
         -a agent5 -a agent6 -a agent7 -a agent8 \
         -c 4 -q 200000
 
-This will create 8*16*4 = 512 connections total, which is about 128
+This will create 8\*16\*4 = 512 connections total, which is about 128
 per memcached server thread.  This ought to be enough outstanding
 requests to cause server-side queuing delay, and no possibility of
 client-side queuing delay adulterating the latency measurements.
