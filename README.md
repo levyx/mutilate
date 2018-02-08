@@ -183,8 +183,9 @@ Command-line Options
     
     Agent-mode options:
       -A, --agentmode               Run client in agent mode.
-      -a, --agent=host              Enlist remote agent.
-      -p, --agent_port=STRING       Agent port.  (default=`5556')
+      -a, --agent=STRING            Enlist remote agent[:port]
+      -p, --agent_port=STRING       Agent port (default=`5556'). Ignored if port 
+                                      is defined in agent.
       -l, --lambda_mul=INT          Lambda multiplier.  Increases share of QPS for 
                                       this client.  (default=`1')
       -C, --measure_connections=INT Master client connections per server, overrides 

@@ -456,8 +456,10 @@ int main(int argc, char **argv) {
   } else if (args.agent_given) {
     for (unsigned int i = 0; i < args.agent_given; i++) {
       zmq::socket_t *s = new zmq::socket_t(context, ZMQ_REQ);
-      string host = string("tcp://") + string(args.agent_arg[i]) +
+      string host = string("tcp://") + string(args.agent_arg[i]);
+      if (string::npos == host.find(string(":"))) {
         string(":") + string(args.agent_port_arg);
+      }
       s->connect(host.c_str());
       agent_sockets.push_back(s);
     }
